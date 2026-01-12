@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OuterWorks | Consultation Services</title>
+
+  <meta name="description" content="OuterWorks provides project management and construction consultation services including home repair, storm damage, excavation, and landscaping. Serving all areas." />
+
+  <style>
+    :root {
+      --bg: #0e1116;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: #f1f1f1;
+      --muted: #b6b6b6;
+      --accent: #f59e0b;
+      --max: 960px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(circle at top, #1a1f2b, #0e1116);
+      color: var(--text);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: auto;
+      padding: 60px 20px;
+      display: grid;
+      gap: 40px;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo img {
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 16px 0 8px;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* SERVICES */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .services li::before {
+      content: "▸";
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    /* CONTACT */
+    .contact {
+      display: grid;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .contact a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="assets/logo.png" alt="OuterWorks logo" />
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Consultation Services</h1>
+      <p>
+        OuterWorks provides professional consultation for construction and property improvement projects.
+        We assist with planning, coordination, and oversight to help projects move forward efficiently.
+        Serving all areas.
+      </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="card services">
+      <h2>Areas of Consultation</h2>
+      <ul>
+        <li>Project Management Consultation</li>
+        <li>Construction Consultation</li>
+        <li>Home Repair & Maintenance</li>
+        <li>Storm Damage Assessment</li>
+        <li>Excavation & Earthwork</li>
+        <li>Landscaping & Site Preparation</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card contact">
+      <h2>Contact</h2>
+      <div>
+        Business: <a href="tel:+13252619675">325-261-9675</a>
+      </div>
+      <div>
+        Mobile: <a href="tel:+16363750094">636-375-0094</a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> OuterWorks. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
