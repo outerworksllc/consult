@@ -28,14 +28,22 @@
       min-height: 100vh;
     }
 
-    .bg{
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background: url("assets/logo.png") center 35% / cover no-repeat fixed;
-      filter: saturate(1.08) contrast(1.05);
-      transform: scale(1.02);
-    }
+   .bg{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("./assets/logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* KEY FIX */
+  background-size: min(80vw, 900px) auto;
+
+  opacity: 0.18;               /* subtle watermark look */
+  filter: saturate(1.05) contrast(1.05);
+}
+
     .overlay{
       position: fixed;
       inset: 0;
@@ -61,30 +69,41 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .brand img{
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
-      object-fit: cover;
-    }
-    .brand .name strong{
-      display:block;
-      font-size: 16px;
-      letter-spacing: .3px;
-    }
-    .brand .name span{
-      display:block;
-      font-size: 13px;
-      color: var(--muted);
-    }
+  .brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.logo-main{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+
+  border-radius: 10px;
+  padding: 6px;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+}
+
+.brand-text{
+  line-height: 1.15;
+}
+
+.brand-text strong{
+  display:block;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+
+.brand-text span{
+  display:block;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
 
     .actions{
       display:flex;
@@ -223,9 +242,13 @@
       font-size: 13px;
     }
 
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-    }
+   @media (max-width: 600px){
+  .bg{
+    background-size: 90vw auto;
+    opacity: 0.14;
+  }
+}
+
     @media (max-width: 520px){
       .btn{ padding: 10px 12px; font-size: 13.5px; }
       .pad{ padding: 20px; }
@@ -242,14 +265,20 @@
   <div class="overlay" aria-hidden="true"></div>
 
   <main>
-    <div class="topbar">
-      <div class="brand">
-        <img src="assets/logo.png" alt="OuterWorks logo" />
-        <div class="name">
-          <strong>OuterWorks</strong>
-          <span>Services & Delivery Approach</span>
-        </div>
-      </div>
+  <div class="brand">
+  <img
+    class="logo-main"
+    src="./assets/logo-micro.png"
+    alt="OuterWorks mark"
+    onerror="this.style.display='none'"
+  />
+
+  <div class="brand-text">
+    <strong>OuterWorks</strong>
+    <span>Remote-first • Onsite TX & MO as needed</span>
+  </div>
+</div>
+    
 
       <div class="actions">
         <a class="btn" href="index.html">← Home</a>
