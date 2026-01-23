@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OuterWorks | Project Management • Cybersecurity • Engineering</title>
+
+  <meta name="description" content="OuterWorks provides project management, cybersecurity consultation, and technical delivery services. Remote-first with onsite support in Texas and Missouri as needed." />
+
+  <style>
+    :root{
+      --bg:#070b12;
+      --card:rgba(255,255,255,0.07);
+      --border:rgba(255,255,255,0.14);
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.72);
+      --accent:#38bdf8;
+      --accent2:#22c55e;
+      --max:1100px;
+      --radius:20px;
+      --shadow:0 18px 60px rgba(0,0,0,0.55);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    /* BACKGROUND LOGO (WATERMARK) */
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background-image:url("./assets/logo.png");
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:min(80vw,900px) auto;
+      opacity:0.14;
+      filter:saturate(1.05) contrast(1.05);
+    }
+
+    /* DARK OVERLAY */
+    .overlay{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        linear-gradient(180deg,
+          rgba(3,6,10,0.35),
+          rgba(3,6,10,0.88)
+        );
+    }
+
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:56px 18px 72px;
+      display:grid;
+      gap:18px;
+    }
+
+    /* HEADER */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand img{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+      padding:6px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.18);
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:16px;
+      letter-spacing:.4px;
+    }
+
+    .brand-text span{
+      display:block;
+      font-size:12.5px;
+      color:var(--muted);
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      color:var(--text);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.06);
+      backdrop-filter:blur(10px);
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .btn.primary{
+      border-color:rgba(56,189,248,0.65);
+      background:rgba(56,189,248,0.16);
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,0.12);
+    }
+
+    /* CARDS */
+    .card{
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+    }
+
+    .pad{ padding:28px; }
+
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.05;
+      letter-spacing:-0.5px;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:75ch;
+      line-height:1.6;
+      font-size:15.5px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.3px;
+    }
+
+    .list{
+      list-style:none;
+      padding:0;
+      margin:14px 0 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .dot{
+      color:var(--accent);
+      font-weight:900;
+    }
+
+    /* CONTACT */
+    .contactRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px;
+      border-radius:16px;
+      background:rgba(0,0,0,0.18);
+      border:1px solid rgba(255,255,255,0.14);
+      margin-top:10px;
+    }
+
+    .contactRow small{
+      display:block;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .contactRow a{
+      color:var(--text);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    footer{
+      text-align:center;
+      font-size:13px;
+      color:rgba(255,255,255,0.55);
+      margin-top:6px;
+    }
+
+    @media(max-width:900px){
+      .grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="overlay"></div>
+
+  <main>
+    <div class="topbar">
+      <div class="brand">
+        <img src="./assets/logo-micro.png" alt="OuterWorks mark">
+        <div class="brand-text">
+          <strong>OuterWorks</strong>
+          <span>Remote-first • Onsite TX & MO as needed</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="./services.html">Services</a>
+        <a class="btn primary" href="#contact">Contact</a>
+        <a class="btn" href="mailto:lee.outerworks@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <section class="card pad">
+      <h1>Project Management • Cybersecurity • Engineering Delivery</h1>
+      <p class="sub">
+        OuterWorks provides structured project management, cybersecurity consultation,
+        and technical delivery services for organizations that need clarity,
+        accountability, and on-time execution.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card pad">
+        <h2>Services</h2>
+        <ul class="list">
+          <li><span class="dot">▸</span><span><strong>Project Management</strong> — planning, milestones, risk tracking, delivery oversight</span></li>
+          <li><span class="dot">▸</span><span><strong>Cybersecurity Consultation</strong> — posture reviews, risk guidance, compliance alignment</span></li>
+          <li><span class="dot">▸</span><span><strong>IT & Engineering Advisory</strong> — scoping, implementation strategy, execution support</span></li>
+          <li><span class="dot">▸</span><span><strong>Development & Automation</strong> — tools, workflows, dashboards</span></li>
+        </ul>
+      </div>
+
+      <aside class="card pad" id="contact">
+        <h2>Contact</h2>
+
+        <div class="contactRow">
+          <div>
+            <small>Email</small>
+            <a href="mailto:lee.outerworks@gmail.com">lee.outerworks@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contactRow">
+          <div>
+            <small>Business</small>
+            <a href="tel:+13252619675">325-261-9675</a>
+          </div>
+        </div>
+
+        <div class="contactRow">
+          <div>
+            <small>Mobile</small>
+            <a href="tel:+16363750094">636-375-0094</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>© <span id="y"></span> OuterWorks</footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
